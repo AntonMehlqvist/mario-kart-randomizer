@@ -1,3 +1,8 @@
+export type GameItem = {
+	name: string;
+	imgSrc: string;
+};
+
 export const characters = [
 	{
 		name: 'Mario',
@@ -167,7 +172,7 @@ export const characters = [
 		name: 'Mii',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/a/ab/Mii_amiibo_MK8.png/70px-Mii_amiibo_MK8.png',
 	},
-] as const;
+];
 
 export const karts = [
 	{
@@ -262,7 +267,7 @@ export const karts = [
 		name: 'Koopa Clown',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/7/70/MK8DX_Koopa_Clown.png/120px-MK8DX_Koopa_Clown.png',
 	},
-] as const;
+];
 
 export const bikes = [
 	{
@@ -313,7 +318,7 @@ export const bikes = [
 		name: 'Master Cycle',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/8/8a/MK8MasterCycle.png/120px-MK8MasterCycle.png',
 	},
-] as const;
+];
 
 export const ATVs = [
 	{
@@ -340,9 +345,9 @@ export const ATVs = [
 		name: 'Inkstriker',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/e/eb/MK8DX_Inkstriker.png/120px-MK8DX_Inkstriker.png',
 	},
-] as const;
+];
 
-export const vehicles = [...karts, ...bikes, ...ATVs] as const;
+export const vehicles = [...karts, ...bikes, ...ATVs];
 
 export const tires = [
 	{
@@ -433,7 +438,7 @@ export const tires = [
 		name: 'Leaf Tires',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/f/f9/Leaf_Tires_MK8.png/120px-Leaf_Tires_MK8.png',
 	},
-] as const;
+];
 
 export const gliders = [
 	{
@@ -496,4 +501,4 @@ export const gliders = [
 		name: 'Paper Glider',
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/0/0e/PaperGliderIcon-MK8.png/120px-PaperGliderIcon-MK8.png',
 	},
-] as const;
+];
