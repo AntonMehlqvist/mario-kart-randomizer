@@ -31,6 +31,8 @@ export default function RandomBox(props: Props) {
 					{item => (
 						<div class="flex items-center justify-center h-32 p-3">
 							<img
+								height={128}
+								width={77}
 								src={item.imgSrc}
 								alt={item.name}
 								loading="lazy"
