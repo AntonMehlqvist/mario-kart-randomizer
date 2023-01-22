@@ -23,7 +23,7 @@ export default function Randomizer({}: Props) {
 	};
 
 	return (
-		<div class="flex flex-col gap-6 items-center">
+		<div class="flex flex-col gap-12 items-center">
 			<div class="flex flex-row gap-4 flex-wrap w-60 sm:flex-nowrap sm:w-auto">
 				<For each={boxes()}>
 					{boxItems => (
@@ -35,11 +35,17 @@ export default function Randomizer({}: Props) {
 				</For>
 			</div>
 
-			<button
-				class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-max"
-				onClick={spin}>
-				{isSpinning() ? 'Spin again' : 'Spin'}
-			</button>
+			<div class="text-center">
+				<button
+					class="border-4 mx-auto flex justify-center items-center border-red-600 bg-slate-50 hover:border-red-700 hover:bg-slate-100 active:border-red-900 active:bg-slate-200 rounded-full w-32 h-32"
+					onClick={spin}>
+					<img
+						src="https://mario.wiki.gallery/images/thumb/d/d9/MK8_Mario_Icon.png/70px-MK8_Mario_Icon.png"
+						alt="Mario head"
+					/>
+				</button>
+				<p class="text-white mt-4">Press the button to spin</p>
+			</div>
 		</div>
 	);
 }
