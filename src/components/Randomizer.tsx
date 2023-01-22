@@ -5,6 +5,11 @@ import RandomBox from './RandomBox';
 
 type Props = {};
 
+let audio: HTMLAudioElement | null = null;
+if (typeof window !== 'undefined') {
+	audio = new Audio(`${location ? location.origin : ''}/woo-hoo.mp3`);
+}
+
 export default function Randomizer({}: Props) {
 	const [isSpinning, setIsSpinning] = createSignal(false);
 	const [boxes, setBoxes] = createSignal([
@@ -19,6 +24,7 @@ export default function Randomizer({}: Props) {
 			// @ts-ignore-line
 			setBoxes(boxes().map(box => shuffleArray(box)));
 		}
+		audio?.play();
 		setIsSpinning(true);
 	};
 
