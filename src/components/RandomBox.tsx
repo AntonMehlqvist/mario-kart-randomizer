@@ -35,7 +35,7 @@ export default function RandomBox(props: Props) {
 								width={77}
 								src={item.imgSrc}
 								alt={item.name}
-								loading="lazy"
+								loading="eager"
 							/>
 						</div>
 					)}
