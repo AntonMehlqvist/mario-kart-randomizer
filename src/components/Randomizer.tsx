@@ -24,7 +24,7 @@ export default function Randomizer({}: Props) {
 
 	return (
 		<div class="flex flex-col gap-6 items-center">
-			<div class="flex gap-4">
+			<div class="flex flex-row gap-4 flex-wrap w-60 sm:flex-nowrap sm:w-auto">
 				<For each={boxes()}>
 					{boxItems => (
 						<RandomBox
