@@ -10,18 +10,22 @@ if (typeof window !== "undefined") {
   audio = new Audio(`${location ? location.origin : ""}/woo-hoo.mp3`);
 }
 
+const boxItems = [characters, vehicles, tires, gliders];
+
 export default function Randomizer({}: Props) {
   const [isSpinning, setIsSpinning] = createSignal(false);
   const [boxes, setBoxes] = createSignal([
-    characters,
-    vehicles,
-    tires,
-    gliders,
+    [characters[0], ...shuffleArray(characters)],
+    [characters[0], ...shuffleArray(vehicles)],
+    [characters[0], ...shuffleArray(tires)],
+    [characters[0], ...shuffleArray(gliders)],
   ]);
 
   const spin = () => {
-    // @ts-ignore-line
-    setBoxes(boxes().map((box) => shuffleArray(box)));
+    if (isSpinning()) {
+      // @ts-ignore-line
+      setBoxes(boxItems.map((box) => shuffleArray(box)));
+    }
     audio?.play();
     setIsSpinning(true);
   };
