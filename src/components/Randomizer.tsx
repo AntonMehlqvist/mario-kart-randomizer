@@ -13,17 +13,15 @@ if (typeof window !== "undefined") {
 export default function Randomizer({}: Props) {
   const [isSpinning, setIsSpinning] = createSignal(false);
   const [boxes, setBoxes] = createSignal([
-    shuffleArray(characters),
-    shuffleArray(vehicles),
-    shuffleArray(tires),
-    shuffleArray(gliders),
+    characters,
+    vehicles,
+    tires,
+    gliders,
   ]);
 
   const spin = () => {
-    if (isSpinning()) {
-      // @ts-ignore-line
-      setBoxes(boxes().map((box) => shuffleArray(box)));
-    }
+    // @ts-ignore-line
+    setBoxes(boxes().map((box) => shuffleArray(box)));
     audio?.play();
     setIsSpinning(true);
   };
