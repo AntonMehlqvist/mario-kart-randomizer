@@ -584,4 +584,12 @@ export const items = [
 		name: 'Crazy 8',
 		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/d/dc/Mk8item22.png?width=325',
 	},
+	{
+		name: 'Coin',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/8/87/Mk8item19.png?width=640',
+	},
+	{
+		name: 'Boo',
+		imgSrc: 'https://images.nintendolife.com/0ad1e8cf9ce9e/boo.435x.jpg',
+	},
 ];
