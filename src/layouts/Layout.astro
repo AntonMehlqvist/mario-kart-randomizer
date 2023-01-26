@@ -1,4 +1,5 @@
 ---
+import background from '../assets/background-low.jpg';
 export interface Props {
 	title: string;
 }
@@ -16,6 +17,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col justify-center min-h-screen">
+		<img
+			src={background}
+			alt="mario kart background"
+			class="fixed inset-0 object-cover w-screen min-h-screen max-w-none blur-[6px] -z-[1]"
+			loading="eager"
+		/>
+		<div class="fixed inset-0 bg-slate-900 opacity-60 -z-[1]"></div>
 		<slot />
 	</body>
 </html>
