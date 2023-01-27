@@ -1,28 +1,36 @@
-import { Component, createEffect, For } from 'solid-js';
-import type { GameItem } from '../gameInfo';
+import { Component, createEffect, For, Index } from "solid-js";
+import type { GameItem } from "../gameInfo";
 type Props = {
-	items: GameItem[];
-	activeItems: string[];
+  items: GameItem[];
+  activeItems: string[];
 };
 
-export const ItemGrid: Component<Props> = props => {
-	createEffect(() => {
-		console.log(props.activeItems);
-	});
-	return (
-		<div class="grid grid-cols-fit w-full">
-			<For each={props.items}>
-				{item => {
-					const isActive = props.activeItems.includes(item.name);
-					return (
-						<div
-							class={`aspect-square p-2 max-w-[5rem] max-h-[5rem]
-						${!isActive ? 'opacity-50' : ''}`}>
-							<img src={item.imgSrc} alt={item.name} />
-						</div>
-					);
-				}}
-			</For>
-		</div>
-	);
+type ItemGridItem = GameItem & { isActive: boolean };
+
+export const ItemGrid: Component<Props> = (props) => {
+  const items = () =>
+    props.items.map((item) => ({
+      ...item,
+      isActive: props.activeItems.includes(item.name),
+    }));
+  return (
+    <div class="grid grid-cols-6 max-w-6xl mx-auto gap-3">
+      <Index each={items()}>
+        {(item) => {
+          return (
+            <div
+              class={`aspect-square w-full p-[15%] bg-slate-100 transition-opacity rounded-md
+						${!item().isActive ? "opacity-50" : ""}`}
+            >
+              <img
+                src={item().imgSrc}
+                alt={item.name}
+                class="aspect-square object-contain mix-blend-multiply"
+              />
+            </div>
+          );
+        }}
+      </Index>
+    </div>
+  );
 };

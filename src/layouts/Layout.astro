@@ -1,35 +1,64 @@
 ---
-import background from '../assets/background-low.jpg';
+import background from "../assets/background-low.jpg";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="flex flex-col justify-center min-h-screen">
-		<img
-			src={background}
-			alt="mario kart background"
-			class="fixed inset-0 object-cover w-screen min-h-screen max-w-none blur-[6px] -z-[1]"
-			loading="eager"
-		/>
-		<div class="fixed inset-0 bg-slate-900 opacity-60 -z-[1]"></div>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col justify-center min-h-screen">
+    <img
+      src={background}
+      alt="mario kart background"
+      class="fixed inset-0 object-cover w-screen min-h-screen max-w-none blur-[6px] -z-[1]"
+      loading="eager"
+    />
+    <div class="fixed inset-0 bg-slate-900 opacity-60 -z-[1]"></div>
+    <header class="fixed top-0 w-full z-20 flex justify-center">
+      <ul
+        class="flex gap-5 max-w-max bg-slate-100 bg-opacity-75 items-center justify-center px-12 py-5 backdrop-blur-lg rounded-b-lg"
+      >
+        <li>
+          <a
+            class={`bold font-bold tracking-wide ${
+              currentPath === "" ? "underline underline-offset-2" : ""
+            }`}
+            href="/">Setup</a
+          >
+        </li>
+        <li>
+          <a
+            class={`bold font-bold tracking-wide ${
+              currentPath === "items" ? "underline underline-offset-2" : ""
+            }`}
+            href="/items">Items</a
+          >
+        </li>
+      </ul>
+    </header>
+    <main
+      class="flex flex-col items-center justify-center gap-12 px-6 py-9 sm:py-10 md:py-40"
+    >
+      <slot />
+    </main>
+  </body>
 </html>
 <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #f6f6f6;
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
 </style>

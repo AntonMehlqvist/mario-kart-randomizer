@@ -1,16 +1,12 @@
 ---
-import { ItemRandomizer } from '../components/ItemRandomizer';
-import Randomizer from '../components/Randomizer';
-import Layout from '../layouts/Layout.astro';
+import { ItemRandomizer } from "../components/ItemRandomizer";
+import Randomizer from "../components/Randomizer";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Mariokart randomizer - Items">
-	<main
-		class="flex flex-col items-center justify-center gap-12 px-6 py-12 sm:py-10"
-	>
-		<h1 class="text-3xl font-bold text-gray-50">
-			Mario kart item randomizer
-		</h1>
-		<ItemRandomizer client:load />
-	</main>
+  <h1 class="text-3xl font-bold text-gray-50 text-center">
+    Mario kart item randomizer
+  </h1>
+  <ItemRandomizer client:load />
 </Layout>
