@@ -16,7 +16,11 @@ export const ItemRandomizer: Component = () => {
   return (
     <div class="w-full">
       <ItemGrid items={items()} activeItems={activeItems()} />
-      <SpinButton class="mt-12" onClick={randomizeSelection} />
+      <SpinButton
+        class="mt-12"
+        onClick={randomizeSelection}
+        text="Press the button to randomize"
+      />
     </div>
   );
 };
