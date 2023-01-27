@@ -1,0 +1,12 @@
+---
+import { ItemRandomizer } from "../components/ItemRandomizer";
+import Randomizer from "../components/Randomizer";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Mariokart randomizer - Items">
+  <h1 class="text-3xl font-bold text-gray-50 text-center">
+    Mario kart item randomizer
+  </h1>
+  <ItemRandomizer client:load />
+</Layout>

@@ -1,22 +1,10 @@
 ---
-import Randomizer from '../components/Randomizer';
-import Layout from '../layouts/Layout.astro';
-import background from '../assets/background-low.jpg';
+import Randomizer from "../components/Randomizer";
+import Layout from "../layouts/Layout.astro";
+import background from "../assets/background-low.jpg";
 ---
 
 <Layout title="Mariokart randomizer">
-	<img
-		src={background}
-		alt="mario kart background"
-		class="fixed inset-0 object-cover w-screen min-h-screen max-w-none blur-[6px] -z-[1]"
-		loading="eager"
-	/>
-	<div class="fixed inset-0 bg-slate-900 opacity-60 -z-[1]"></div>
-
-	<main
-		class="flex flex-col items-center justify-center gap-12 px-6 py-12 sm:py-10"
-	>
-		<h1 class="text-3xl font-bold text-gray-50">Mario kart randomizer</h1>
-		<Randomizer client:load />
-	</main>
+  <h1 class="text-3xl font-bold text-gray-50">Mario kart randomizer</h1>
+  <Randomizer client:load />
 </Layout>

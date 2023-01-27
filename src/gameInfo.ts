@@ -502,3 +502,94 @@ export const gliders = [
 		imgSrc: 'https://mario.wiki.gallery/images/thumb/0/0e/PaperGliderIcon-MK8.png/120px-PaperGliderIcon-MK8.png',
 	},
 ];
+
+export const items = [
+	{
+		name: 'Green Shell',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/f/f2/Mk8item7.png?width=325',
+	},
+	{
+		name: 'Triple Green Shells',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/6/60/Mk8item8.png?width=325',
+	},
+	{
+		name: 'Red Shell',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/b/b4/Mk8item9.png?width=325',
+	},
+	{
+		name: 'Triple Red Shells',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/b/b4/Mk8item10.png?width=325',
+	},
+	{
+		name: 'Banana',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/0/00/Mk8item5.png?width=325',
+	},
+	{
+		name: 'Triple Bananas',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/1/1a/Mk8item6.png?width=325',
+	},
+	{
+		name: 'Mushroom',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/6/6e/Mk8item1.png?width=325',
+	},
+	{
+		name: 'Triple Mushrooms',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/a/a6/Mk8item2.png?width=325',
+	},
+	{
+		name: 'Golden Mushroom',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/b/ba/Mk8item3.png?width=325',
+	},
+	{
+		name: 'Fire Flower',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/e/ec/Mk8item16.png?width=325',
+	},
+	{
+		name: 'Star',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/f/fb/Mk8item4.png?width=325',
+	},
+	{
+		name: 'Blooper',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/f/f1/Mk8item15.png?width=325',
+	},
+	{
+		name: 'Bob-omb',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/d/d7/Mk8item14.png?width=325',
+	},
+	{
+		name: 'Spiny Shell',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/f/f1/Mk8item11.png?width=325',
+	},
+	{
+		name: 'Lightning',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/a/af/Mk8item12.png?width=325',
+	},
+	{
+		name: 'Bullet Bill',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/f/ff/Mk8item13.png?width=325',
+	},
+	{
+		name: 'Boomerang Flower',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/d/d5/Mk8item17.png?width=325',
+	},
+	{
+		name: 'Piranha Plant',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/1/12/Mk8item18.png?width=325',
+	},
+	{
+		name: 'Super Horn',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/4/49/Mk8item21.png?width=325',
+	},
+	{
+		name: 'Crazy 8',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/d/dc/Mk8item22.png?width=325',
+	},
+	{
+		name: 'Coin',
+		imgSrc: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/mario-kart-for-wii-u/8/87/Mk8item19.png?width=640',
+	},
+	{
+		name: 'Boo',
+		imgSrc: 'https://images.nintendolife.com/0ad1e8cf9ce9e/boo.435x.jpg',
+	},
+];
