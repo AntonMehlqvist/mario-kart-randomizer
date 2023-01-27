@@ -58,6 +58,10 @@ const currentPath = pathname.slice(1);
     <main
       class="flex flex-col items-center justify-center gap-12 px-6 py-9 sm:py-10 md:py-40"
     >
+      <h2>
+        {pathname}
+        {currentPath}
+      </h2>
       <slot />
     </main>
   </body>
