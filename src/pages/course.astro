@@ -1,0 +1,12 @@
+---
+import { CourseRandomizer } from '../components/CourseRandomizer';
+import Page from '../layouts/Page.astro';
+import { courses } from '../gameInfo';
+---
+
+<Page title="Mariokart randomizer">
+	<h1 class="text-center text-3xl font-bold text-gray-50">
+		Mario kart course randomizer
+	</h1>
+	<CourseRandomizer client:load boxItems={[courses]} initialItem={courses[0]} />
+</Page>
