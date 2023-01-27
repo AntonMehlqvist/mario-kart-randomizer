@@ -48,7 +48,9 @@ const currentPath = pathname.slice(1);
         <li>
           <a
             class={`bold font-bold tracking-wide ${
-              currentPath === "items" ? "underline underline-offset-2" : ""
+              currentPath.includes("items")
+                ? "underline underline-offset-2"
+                : ""
             }`}
             href="/items">Items</a
           >
