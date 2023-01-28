@@ -1,11 +1,9 @@
-import { Component, createEffect, For, Index } from 'solid-js';
+import { Component, Index } from 'solid-js';
 import type { GameItem } from '../gameInfo';
 type Props = {
 	items: GameItem[];
 	activeItems: string[];
 };
-
-type ItemGridItem = GameItem & { isActive: boolean };
 
 export const ItemGrid: Component<Props> = props => {
 	const items = () =>
