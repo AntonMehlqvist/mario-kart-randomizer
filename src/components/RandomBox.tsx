@@ -18,7 +18,7 @@ export default function RandomBox(props: Props) {
 	});
 
 	return (
-		<div class="h-32 bg-gray-200 border border-gray-300 w-28 rounded-md overflow-hidden">
+		<div class="h-32 w-28 overflow-hidden rounded-md  bg-slate-100">
 			<div
 				style={{
 					transform: props.isSpinning
@@ -29,7 +29,7 @@ export default function RandomBox(props: Props) {
 				ref={boxContent}>
 				<For each={props.gameItems}>
 					{item => (
-						<div class="flex items-center justify-center h-32 p-3">
+						<div class="flex h-32 items-center justify-center p-3">
 							<img
 								height={128}
 								width={77}

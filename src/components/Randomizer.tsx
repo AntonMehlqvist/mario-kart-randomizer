@@ -1,5 +1,5 @@
 import { createEffect, createSignal, For } from 'solid-js';
-import { characters, gliders, tires, vehicles } from '../gameInfo';
+import { characters, GameItem, gliders, tires, vehicles } from '../gameInfo';
 import { shuffleArray } from '../utils/shuffleArray';
 import RandomBox from './RandomBox';
 import SpinButton from './SpinButton';
@@ -25,15 +25,20 @@ export default function Randomizer({}: Props) {
 	const spin = () => {
 		if (isSpinning()) {
 			// @ts-ignore-line
-			setBoxes(boxItems.map(box => shuffleArray(box)));
+			setBoxes(
+				boxItems.map(box => [
+					box.at(-1) as GameItem,
+					...shuffleArray(box),
+				])
+			);
 		}
 		audio?.play();
 		setIsSpinning(true);
 	};
 
 	return (
-		<div class="flex flex-col gap-12 items-center">
-			<div class="flex flex-row gap-4 flex-wrap w-60 sm:flex-nowrap sm:w-auto">
+		<div class="flex flex-col items-center gap-12">
+			<div class="flex w-60 flex-row flex-wrap gap-4 sm:w-auto sm:flex-nowrap">
 				<For each={boxes()}>
 					{boxItems => (
 						<RandomBox
