@@ -26,8 +26,8 @@ export default function Randomizer({}: Props) {
 		if (isSpinning()) {
 			// @ts-ignore-line
 			setBoxes(
-				boxItems.map(box => [
-					box.at(-1) as GameItem,
+				boxItems.map((box, index) => [
+					boxes()[index].at(-1) as GameItem,
 					...shuffleArray(box),
 				])
 			);
