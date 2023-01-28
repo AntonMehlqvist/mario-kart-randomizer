@@ -25,7 +25,8 @@ const currentPath = pathname.slice(1);
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col justify-center">
-		<Analytics client:only />
+		{process.env.NODE_ENV === 'production' && <Analytics client:only />}
+
 		<img
 			src={background}
 			alt="mario kart background"
