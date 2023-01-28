@@ -17,8 +17,8 @@ export const ItemGrid: Component<Props> = props => {
 				{item => {
 					return (
 						<div
-							class={`flex w-full flex-col rounded-md bg-slate-100 p-[15%] transition-opacity
-						${!item().isActive ? 'opacity-50' : ''}`}>
+							class={`flex w-full flex-col rounded-md bg-slate-100 bg-opacity-75 p-[15%] transition-opacity
+						${!item().isActive ? 'bg-slate-300 opacity-50' : ''}`}>
 							<div class="relative w-full after:block after:pb-[100%] after:content-['']">
 								<img
 									src={item().imgSrc}

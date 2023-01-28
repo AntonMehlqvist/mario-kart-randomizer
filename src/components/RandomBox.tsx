@@ -18,7 +18,7 @@ export default function RandomBox(props: Props) {
 	});
 
 	return (
-		<div class="h-32 w-28 overflow-hidden rounded-md  bg-slate-100">
+		<div class="h-32 w-28 overflow-hidden rounded-md bg-slate-100 bg-opacity-75">
 			<div
 				style={{
 					transform: props.isSpinning

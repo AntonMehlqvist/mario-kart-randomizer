@@ -1,0 +1,14 @@
+---
+import Nav from './Nav.astro';
+import NavItem from './NavItem.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class="fixed top-0 z-20 flex w-full justify-center">
+	<Nav>
+		<NavItem href="/">Setup</NavItem>
+		<NavItem href="/items">Items</NavItem>
+	</Nav>
+</header>

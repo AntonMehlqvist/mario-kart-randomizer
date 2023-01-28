@@ -1,0 +1,26 @@
+---
+export interface Props {
+	href: string;
+}
+
+const { href } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+let isActive = false;
+
+const isRootHref = href === '/';
+const isRootPath = currentPath === '' && isRootHref;
+
+if (isRootPath || (!isRootHref && currentPath.includes(href.slice(1)))) {
+	isActive = true;
+}
+---
+
+<li>
+	<a
+		class={`bold font-bold tracking-wide ${
+			isActive ? 'underline underline-offset-2' : ''
+		}`}
+		href={href}><slot /></a
+	>
+</li>
