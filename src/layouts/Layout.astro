@@ -1,7 +1,7 @@
 ---
-import { Analytics } from '@vercel/analytics/react';
 import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
 import background from '../assets/background-low.jpg';
+import { Analytics } from '../components/Analytics';
 export interface Props {
 	title: string;
 }
@@ -25,7 +25,7 @@ const currentPath = pathname.slice(1);
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col justify-center">
-		<Analytics />
+		<Analytics client:only />
 		<img
 			src={background}
 			alt="mario kart background"
