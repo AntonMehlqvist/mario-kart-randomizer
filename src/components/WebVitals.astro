@@ -1,0 +1,10 @@
+<script>
+	import { webVitals } from '../scripts/webVitals';
+
+	const analyticsId = import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID;
+
+	webVitals({
+		path: window.location.pathname,
+		analyticsId,
+	});
+</script>
