@@ -19,13 +19,15 @@ export const ItemGrid: Component<Props> = props => {
 				{item => {
 					return (
 						<div
-							class={`aspect-square w-full rounded-md bg-slate-100 p-[15%] transition-opacity
+							class={`flex w-full flex-col rounded-md bg-slate-100 p-[15%] transition-opacity
 						${!item().isActive ? 'opacity-50' : ''}`}>
-							<img
-								src={item().imgSrc}
-								alt={item.name}
-								class="aspect-square object-contain mix-blend-multiply"
-							/>
+							<div class="relative w-full after:block after:pb-[100%] after:content-['']">
+								<img
+									src={item().imgSrc}
+									alt={item.name}
+									class="absolute inset-0 left-1/2 max-h-full -translate-x-1/2 object-contain"
+								/>
+							</div>
 						</div>
 					);
 				}}
