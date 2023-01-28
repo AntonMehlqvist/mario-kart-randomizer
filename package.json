@@ -17,5 +17,10 @@
     "random": "^4.1.0",
     "solid-js": "^1.4.3",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.2"
   }
 }
