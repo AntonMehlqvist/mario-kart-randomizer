@@ -1,5 +1,7 @@
 import { Component, createSignal, For } from 'solid-js';
 import type { GameItem } from '../gameInfo';
+import { fillArray } from '../utils/fillArray';
+import { getLongestArrayLength } from '../utils/getLongestArrayLength';
 import { shuffleArray } from '../utils/shuffleArray';
 import RandomBox from './RandomBox';
 import SpinButton from './SpinButton';
@@ -15,16 +17,21 @@ if (typeof window !== 'undefined') {
 }
 
 export const Randomizer: Component<Props> = props => {
+	const longestBoxArrayLength = getLongestArrayLength(props.boxes);
+	const filledBoxes = props.boxes.map(box =>
+		fillArray(box, longestBoxArrayLength, box)
+	);
+
 	const [isSpinning, setIsSpinning] = createSignal(false);
 	const [boxes, setBoxes] = createSignal(
-		props.boxes.map(box => [props.initialItem, ...shuffleArray(box)])
+		filledBoxes.map(box => [props.initialItem, ...shuffleArray(box)])
 	);
 
 	const spin = () => {
 		if (isSpinning()) {
 			// @ts-ignore-line
 			setBoxes(
-				props.boxes.map((box, index) => [
+				filledBoxes.map((box, index) => [
 					boxes()[index].at(-1) as GameItem,
 					...shuffleArray(box),
 				])
@@ -35,7 +42,7 @@ export const Randomizer: Component<Props> = props => {
 			 * this is not done. Not sure why ¯\_(ツ)_/¯...
 			 */
 			setBoxes(
-				props.boxes.map(box => [
+				filledBoxes.map(box => [
 					props.initialItem,
 					...shuffleArray(box),
 				])
