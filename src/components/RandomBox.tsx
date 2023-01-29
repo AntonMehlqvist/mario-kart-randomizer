@@ -48,7 +48,9 @@ export default function RandomBox(props: Props) {
 									/>
 								</div>
 								<p class="text-sm">
-									{item.name.substring(0, 8)}...
+									{item.name.length > 8
+										? item.name.substring(0, 8) + '...'
+										: item.name}
 								</p>
 							</div>
 						)}
