@@ -1,5 +1,6 @@
 ---
-import Randomizer from '../components/Randomizer';
+import { Randomizer } from '../components/Randomizer';
+import { characters, gliders, tires, vehicles } from '../gameInfo';
 import Page from '../layouts/Page.astro';
 ---
 
@@ -7,5 +8,9 @@ import Page from '../layouts/Page.astro';
 	<h1 class="text-center text-3xl font-bold text-gray-50">
 		Mario kart setup randomizer
 	</h1>
-	<Randomizer client:load />
+	<Randomizer
+		boxes={[characters, vehicles, tires, gliders]}
+		initialItem={characters[0]}
+		client:load
+	/>
 </Page>
