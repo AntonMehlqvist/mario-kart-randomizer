@@ -8,32 +8,21 @@ type Props = {
 
 export default function RandomBox(props: Props) {
 	let boxContent: HTMLDivElement | undefined;
-	let boxTitle: HTMLDivElement | undefined;
 	const [boxContentHeight, setBoxContentHeight] = createSignal(0);
-	const [boxTitleHeight, setBoxTitleHeight] = createSignal(0);
 
 	onMount(() => {
-		if (
-			!boxContent ||
-			!boxContent.children ||
-			!boxTitle ||
-			!boxTitle.children
-		) {
+		if (!boxContent || !boxContent.children) {
 			return;
 		}
 
 		setBoxContentHeight(
 			boxContent.offsetHeight - boxContent.children[0].clientHeight
 		);
-
-		setBoxTitleHeight(
-			boxTitle.offsetHeight - boxTitle.children[0].clientHeight
-		);
 	});
 
 	return (
 		<div>
-			<div class="relative h-36 w-28 overflow-hidden rounded-md bg-slate-100 bg-opacity-75">
+			<div class="relative h-32 w-28 overflow-hidden rounded-md bg-slate-100 bg-opacity-75">
 				<div
 					style={{
 						transform: props.isSpinning
@@ -44,35 +33,21 @@ export default function RandomBox(props: Props) {
 					ref={boxContent}>
 					<For each={props.gameItems}>
 						{item => (
-							<div class="flex h-32 items-center justify-center p-3">
-								<img
-									height={128}
-									width={77}
-									src={item.imgSrc}
-									alt={item.name}
-								/>
+							<div class="flex h-32 flex-col items-center justify-between p-3">
+								<div class="flex h-[77px] items-center">
+									<img
+										height={128}
+										width={77}
+										src={item.imgSrc}
+										alt={item.name}
+									/>
+								</div>
+								<p class="text-sm">
+									{item.name.substring(0, 8)}...
+								</p>
 							</div>
 						)}
 					</For>
-				</div>
-
-				<div class="absolute bottom-0 left-0 mt-2 h-8 w-28 overflow-hidden rounded-md  bg-slate-200">
-					<div
-						style={{
-							transform: props.isSpinning
-								? `translateY(-${boxTitleHeight()}px)`
-								: 'translateY(0)',
-						}}
-						class="transition-transform duration-[2500ms]"
-						ref={boxTitle}>
-						<For each={props.gameItems}>
-							{item => (
-								<div class="flex h-8 items-center justify-center">
-									<p>{item.name.substring(0, 8)}...</p>
-								</div>
-							)}
-						</For>
-					</div>
 				</div>
 			</div>
 		</div>

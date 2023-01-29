@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
 	audio = new Audio(`${location ? location.origin : ''}/woo-hoo.mp3`);
 }
 
-const boxItems = [characters, vehicles, tires, gliders];
+const allBoxItems = [characters, vehicles, tires, gliders];
 
 export default function Randomizer({}: Props) {
 	const [isSpinning, setIsSpinning] = createSignal(false);
@@ -26,11 +26,19 @@ export default function Randomizer({}: Props) {
 		if (isSpinning()) {
 			// @ts-ignore-line
 			setBoxes(
-				boxItems.map((box, index) => [
+				allBoxItems.map((box, index) => [
 					boxes()[index].at(-1) as GameItem,
 					...shuffleArray(box),
 				])
 			);
+		} else {
+			// If this is not done, the names are out of sync on the first spin. No idea why...
+			setBoxes([
+				[characters[0], ...shuffleArray(characters)],
+				[characters[0], ...shuffleArray(vehicles)],
+				[characters[0], ...shuffleArray(tires)],
+				[characters[0], ...shuffleArray(gliders)],
+			]);
 		}
 		audio?.play();
 		setIsSpinning(true);
