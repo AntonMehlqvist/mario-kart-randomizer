@@ -4,6 +4,7 @@ import type { GameItem } from '../gameInfo';
 type Props = {
 	gameItems: GameItem[];
 	isSpinning: boolean;
+	index?: number;
 };
 
 export default function RandomBox(props: Props) {
@@ -20,16 +21,20 @@ export default function RandomBox(props: Props) {
 		);
 	});
 
+	const transitionOffset = () => (props.index || 0) * 50;
+
 	return (
 		<div>
 			<div class="relative h-32 w-28 overflow-hidden rounded-md bg-slate-100 bg-opacity-75">
 				<div
 					style={{
+						'transition-duration': `${2500 - transitionOffset()}ms`,
+						'transition-delay': `${transitionOffset()}ms`,
 						transform: props.isSpinning
 							? `translateY(-${boxContentHeight()}px)`
 							: 'translateY(0)',
 					}}
-					class="transition-transform duration-[2500ms]"
+					class="transition-transform ease-[cubic-bezier(0.9,-0.05,0.1,1)]"
 					ref={boxContent}>
 					<For each={props.gameItems}>
 						{item => (

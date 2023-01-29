@@ -49,8 +49,9 @@ export const Randomizer: Component<Props> = props => {
 		<div class="flex flex-col items-center gap-12">
 			<div class="flex w-60 flex-row flex-wrap gap-4 sm:w-auto sm:flex-nowrap">
 				<For each={boxes()}>
-					{boxItems => (
+					{(boxItems, index) => (
 						<RandomBox
+							index={index()}
 							gameItems={boxItems}
 							isSpinning={isSpinning()}
 						/>
