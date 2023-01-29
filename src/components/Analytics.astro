@@ -1,0 +1,8 @@
+<script>
+	import { inject } from '@vercel/analytics';
+	import { isProd } from '../utils/isProd';
+
+	if (isProd()) {
+		inject();
+	}
+</script>
