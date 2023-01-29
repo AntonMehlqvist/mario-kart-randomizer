@@ -1,10 +1,10 @@
 ---
-import Randomizer from "../components/Randomizer";
-import Layout from "../layouts/Layout.astro";
-import { courses } from "../gameInfo";
+import { Randomizer } from '../components/Randomizer';
+import Page from '../layouts/Page.astro';
+import { courses } from '../gameInfo';
 ---
 
-<Layout title="Mariokart randomizer">
-    <h1 class="text-3xl font-bold text-gray-50">Mario kart randomizer</h1>
-    <Randomizer client:load boxItems={[courses]} initialItem={courses[0]} />
-</Layout>
+<Page title="Mariokart randomizer">
+	<h1 class="text-3xl font-bold text-gray-50">Mario kart randomizer</h1>
+	<Randomizer client:load boxes={[courses]} initialItem={courses[0]} />
+</Page>
