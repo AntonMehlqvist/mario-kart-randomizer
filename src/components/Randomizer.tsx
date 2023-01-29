@@ -1,33 +1,42 @@
-import { createEffect, createSignal, For } from 'solid-js';
-import { characters, GameItem, gliders, tires, vehicles } from '../gameInfo';
+import { Component, createSignal, For } from 'solid-js';
+import type { GameItem } from '../gameInfo';
 import { shuffleArray } from '../utils/shuffleArray';
 import RandomBox from './RandomBox';
 import SpinButton from './SpinButton';
 
-type Props = {};
+type Props = {
+	boxes: GameItem[][];
+	initialItem: GameItem;
+};
 
 let audio: HTMLAudioElement | null = null;
 if (typeof window !== 'undefined') {
 	audio = new Audio(`${location ? location.origin : ''}/woo-hoo.mp3`);
 }
 
-const boxItems = [characters, vehicles, tires, gliders];
-
-export default function Randomizer({}: Props) {
+export const Randomizer: Component<Props> = props => {
 	const [isSpinning, setIsSpinning] = createSignal(false);
-	const [boxes, setBoxes] = createSignal([
-		[characters[0], ...shuffleArray(characters)],
-		[characters[0], ...shuffleArray(vehicles)],
-		[characters[0], ...shuffleArray(tires)],
-		[characters[0], ...shuffleArray(gliders)],
-	]);
+	const [boxes, setBoxes] = createSignal(
+		props.boxes.map(box => [props.initialItem, ...shuffleArray(box)])
+	);
 
 	const spin = () => {
 		if (isSpinning()) {
 			// @ts-ignore-line
 			setBoxes(
-				boxItems.map((box, index) => [
+				props.boxes.map((box, index) => [
 					boxes()[index].at(-1) as GameItem,
+					...shuffleArray(box),
+				])
+			);
+		} else {
+			/**
+			 * Names get out of sync on first spin if
+			 * this is not done. Not sure why ¯\_(ツ)_/¯...
+			 */
+			setBoxes(
+				props.boxes.map(box => [
+					props.initialItem,
 					...shuffleArray(box),
 				])
 			);
@@ -52,4 +61,4 @@ export default function Randomizer({}: Props) {
 			<SpinButton onClick={spin} />
 		</div>
 	);
-}
+};

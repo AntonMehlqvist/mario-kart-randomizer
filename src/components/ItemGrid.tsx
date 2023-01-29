@@ -22,7 +22,7 @@ export const ItemGrid: Component<Props> = props => {
 							<div class="relative w-full after:block after:pb-[100%] after:content-['']">
 								<img
 									src={item().imgSrc}
-									alt={item.name}
+									alt={item().name}
 									class="absolute inset-0 left-1/2 top-1/2 max-h-full -translate-x-1/2 -translate-y-1/2 object-contain"
 								/>
 							</div>
