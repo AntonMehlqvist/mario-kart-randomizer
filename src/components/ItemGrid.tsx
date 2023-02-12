@@ -12,7 +12,7 @@ export const ItemGrid: Component<Props> = props => {
 			isActive: props.activeItems.includes(item.name),
 		}));
 	return (
-		<div class="mx-auto grid max-w-6xl grid-cols-6 gap-3">
+		<div class="mx-auto grid max-w-5xl grid-cols-6 gap-3">
 			<Index each={items()}>
 				{item => {
 					return (
