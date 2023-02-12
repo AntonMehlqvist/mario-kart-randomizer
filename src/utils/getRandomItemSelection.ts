@@ -10,7 +10,7 @@ export const getRandomItemSelection = () => {
 	if (numberOfItems > 14) {
 		numberOfItems =
 			random.int(0, 100) < 75
-				? numberOfItems - random.int(1, 5)
+				? numberOfItems - random.int(2, 5)
 				: numberOfItems;
 	} else if (numberOfItems < 8) {
 		numberOfItems =
